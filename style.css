@@ -20,11 +20,16 @@ body{
     margin-right: 1100px;/*I used it to push the buttons in the header to the maximum right because float:riht didn't work, and display:flex didn't work*/
     font-weight: 400;
 }
+
 .header-btn{
     background-color: transparent;
     border: 2px solid var(--lines-color);
     border-radius: 5px;
     padding: 5px 10px;
+    transition: transform 0.5s ease;
+}
+.header-btn:hover{
+    transform : scale(1.1);
 }
 .flex{
     display: flex;
@@ -38,9 +43,20 @@ body{
 }
 
 
-.blue-triangle{
-    background-color: var(--brand-primary);
-    padding-bottom: 40px;
+.triangle-container{
+    position:relative;
+}
+.triangle-a{
+    height:50px;
+    clip-path: polygon(0% 0%, 0% 100%, 80% 0%, 0% 0%);
+    background : linear-gradient(to right,var(--brand-primary) 0% ,#04849d 20%, #03A0Bd 100%)
+}
+.triangle-b{
+    height: 50px;
+    background-color: var(--brand-secondary);
+    clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
+   /* position: absolute;*/
+    width: 100%;
 }
 
 .welcome-msg{
@@ -57,13 +73,43 @@ body{
 .main-content{
     background-color: var(--bg_body);
     padding: 20px 20px 60px 60px;
+    flex-grow: 1;
 }
 
+.center-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96%;
+    height: 7vh;
+    
+}
 .search-bar{
+    width:100%;
+    border: 2px solid var(--lines-color);
+    box-sizing: border-box;
+    border-radius: 5px 0 0 5px;
+    padding: 5px 10px;
+    text-align: left;
+    height:100%;
+    
+}
+.search-icon{
+    
+        padding-left: 25px;
+        background: url("./assets/search-outline.svg") no-repeat left;
+        background-size: 20px;
+      
+}
+
+.search-bar-select{
+
+    width:20%;
     border: 2px solid var(--lines-color);
     border-radius: 5px;
     padding: 5px 10px;
-    max-height: 40px;
+    height:100%;
+    /*text-align: center;*/
 }
 
 .result{
@@ -82,7 +128,11 @@ body{
     background-color: white;
     border-radius: 5%;
     margin: 10px;
+    transition: transform 0.5s ease;
     
+}
+.card:hover{
+    transform: scale(1.1);
 }
 .image-card{
     border-radius: 5% 5% 0% 0%;

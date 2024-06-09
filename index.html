@@ -20,7 +20,11 @@
                 <button class="header-btn"><ion-icon name="heart-outline"></ion-icon> Favourites</button>
             </div>
         </div>
-            <p class="blue-triangle">&nbsp;</p>
+            
+            <section class="triangle-container">
+                <div class="triangle-a"></div>
+                <div class="triangle-b"></div>
+            </section>
             <div class="welcome-msg">
                 Welcome to our website
             </div>
@@ -30,13 +34,17 @@
         </header>
 
         <main class="main-content">
-            <div >
-                <input class="search-bar" type="text" placeholder="Search the website..."/>
-                <select class="search-bar" name="Sort By" id="sortby">
+            <div class="center-content">
+            <div class="center-search">
+               
+                <ion-icon name="search-outline"></ion-icon>
+                <input class="search-bar" type="text" placeholder="Search the website..." />
+            
+                <select class="search-bar-select" name="Sort By" id="sortby">
                     <option value="Default">Default</option>
                  
                 </select>
-                <select class="search-bar" name="filter By" id="filterby">
+                <select class="search-bar-select" name="filter By" id="filterby">
                     <option value="Default">Default</option>
                  
                 </select>
@@ -759,7 +767,7 @@
 
 
             </div>
-            
+        </div>   
         </main>
         <footer>Developed with <ion-icon style="color: red;" name="heart"></ion-icon> © 2023</footer>
 
