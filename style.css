@@ -14,7 +14,19 @@ body{
     --lines-color: #DDDDDD;
     --body-text: #333333;
     --heart-color: #DC143C;
+
   }
+ 
+.dark-mode {
+        --brand-primary: #0768AC;
+        --brand-secondary: #03C180;
+        --bg_default: #1A1A1A;
+        --bg_body: #282828;
+        --lines-color: #000000;
+        --body-text: #EDEDED;
+        --heart-color: #DC143C;
+    }
+
 .header-topic{
     color: var(--brand-primary,--brand-secondary);
     margin-right: 1100px;/*I used it to push the buttons in the header to the maximum right because float:riht didn't work, and display:flex didn't work*/
@@ -164,3 +176,117 @@ h4,h3{
     overflow: hidden;
 }
 
+
+.description{
+    background-color: var(--body-text);
+   
+    
+    
+}
+.description-content{
+    width: 450px;
+    margin-left: 25%;
+    margin-top:2%;
+    padding : 2% 0% 2% 0%;
+
+}
+
+.details-head{
+    color: var(--brand-secondary);
+}
+
+.details-course{
+    color: var(--lines-color);
+}
+
+.details-content{
+    color: var(--lines-color);
+}
+
+.details-for-topic{
+    background-color: var(--bg_body);
+    padding-top: 5%;
+}
+.Topics{
+    width: 450px;
+    margin-left: 25%;
+    padding : 2% 2% 2% 2%;
+    color: var(--body-text);
+    border : 2px solid var(--lines-color);
+    border-radius: 1%;
+    background-color: var(--bg_default);
+    
+}
+
+
+.list-details {
+    list-style: none;
+  }
+
+.list-details li{
+    margin-top: 20px;
+    border : 2px solid var(--lines-color);
+}
+
+.icon-color{
+    color: var(--brand-secondary)
+}
+.footer-details{
+    background-color: var(--bg_body);
+}
+
+.topic-card{
+
+        width:25%;
+        background-color: white;
+        border: 2px solid var(--bg_body);
+        box-shadow: 2px 2px 2px 2px var(--lines-color);
+        margin: 10px;
+        float: right;
+        
+
+
+}
+
+.details-image-card{
+    width:100%;
+    min-height: 40%;
+    max-height: 40%;
+}
+
+.bold{
+    font-weight: 800;
+    font-size: large;
+}
+
+.card-details-interested{
+    border: 2px solid var(--lines-color);
+    padding-left: 7%;
+    font-size: large;
+
+}
+
+.details-btn-favorites{
+    
+    width:90%;
+    height: 3rem;
+    background-color: var(--brand-secondary);
+    font-size:larger;
+    color: white;
+    border: var(--lines-color);
+    padding-bottom: 2rem;
+}
+
+.heart-fav-details{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.unlimited{
+    text-align: center;
+    color:  var(--lines-color);
+    font-size: medium;
+    font:bold;
+
+}
