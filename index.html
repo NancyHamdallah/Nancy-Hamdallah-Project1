@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="./style.css">
         
     </head>
-    <body>
+    <body class="dark-mode">
         <header >
             <div class="flex">
             <div class="header-topic">Web Topics</div>
@@ -22,8 +22,9 @@
         </div>
             
             <section class="triangle-container">
-                <div class="triangle-a"></div>
                 <div class="triangle-b"></div>
+                <div class="triangle-a"></div>
+                
             </section>
             <div class="welcome-msg">
                 Welcome to our website
@@ -36,18 +37,40 @@
         <main class="main-content">
             <div class="center-content">
             <div class="center-search">
-               
+                <div class="search-bar">
+               <div class="search-icon">
                 <ion-icon name="search-outline"></ion-icon>
-                <input class="search-bar" type="text" placeholder="Search the website..." />
-            
-                <select class="search-bar-select" name="Sort By" id="sortby">
+            </div>
+            <div class="search-bar-text-input">
+                <input class="input" type="text" placeholder="Search the website..." />
+            </div>
+        </div>
+
+            <div class="selection">
+                <div>
+                <label class="select-label">Sort by:</label>
+            </div>
+            <div class="search-bar-select-box">
+                <select  class="search-bar-select" name="Sort By" id="sortby">
                     <option value="Default">Default</option>
-                 
                 </select>
-                <select class="search-bar-select" name="filter By" id="filterby">
+            </div>
+                </div>
+
+
+            <div class="selection">
+                <div>
+                <label class="select-label">Sort by:</label>
+            </div>
+            <div class="search-bar-select-box">
+                <select  class="search-bar-select filter" name="filter By" id="filterby">
                     <option value="Default">Default</option>
-                 
                 </select>
+            </div>
+                </div>
+
+
+
             </div>
 
             <div>
@@ -56,7 +79,7 @@
 
             <div class="Cards">
                 <div class="card">
-                        <img class="image-card" src="./assets/html.png"/>
+                        <img class="image-card" src="./assets/html.jpeg"/>
                     
                     
                     <div class="card-description">
@@ -110,7 +133,7 @@
             </div>
 
             <div class="card">
-                <img class="image-card" src="./assets/jquery.png"/>
+                <img class="image-card" src="./assets/jquery.jpeg"/>
             
             
             <div class="card-description">
