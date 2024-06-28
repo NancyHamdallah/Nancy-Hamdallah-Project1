@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WEB TOPICS</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/logo.svg" >
+        <link rel="stylesheet" href="./details-style.css">
+        
+    </head>
+
+    <body>
+        <header >
+            <div class="flex">
+            <div class="header-topic">Web Topics</div>
+            <div class="header-nav">
+                <button class="header-btn" id="dark-mode-toggle"><ion-icon name="moon-outline"></ion-icon> Dark Mode</button>
+                <button class="header-btn" id=favourite-toggle><ion-icon name="heart-outline" id="heart-icon"></ion-icon> Favourites</button>
+            </div>
+        </div>
+            
+            <section class="triangle-container">
+                <div class="triangle-b"></div>
+                <div class="triangle-a"></div>
+                
+            </section>
+            <div class="welcome-msg">
+                Welcome to our website
+            </div>
+            <div class="complement-msg">
+                We have a new design that's fresh,modern, and easy to use.
+            </div>
+        </header>
+        <main class="main">
+            <div class="topic-card">
+                <div >
+                        <img class="details-image-card" src="./assets/javascript.jpg"/>
+                    
+                    
+                    <div class="card-description">
+                        <p ><span class="bold">HTML</span> by <a href="#"> Sarah Smith</a></p>
+                        <div class="card-details-interested">
+                            <p>Interested about this topic?</p>
+                            <button class="details-btn-favorites">Add to Favourites <ion-icon name="heart-outline" class="heart-fav-details"></ion-icon></button>
+                            <p class="unlimited"> Unlimited Credits</p>
+                             </div>
+                        
+                    </div>
+                    
+    
+                </div> 
+            </div>
+
+            <div class="description">
+                <div class="description-content">
+                <div class="details-head">
+                    <h3> Web Development Languages</h3>
+                </div>
+
+                <div class="details-course">
+                    <h1>HTML</h1>
+                </div>
+
+                <div>
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star"></ion-icon>
+                    <ion-icon class="star" name="star-outline"></ion-icon>
+                </div>
+
+                <div class="details-content">
+                    HTML (HyperText Markup Language) is the standard markup language for creating webpages and other
+                    information that can be displayed in a web browser.It provides a structure for content and defines
+                    how it should be displayed on a webpage, including text, images and multimedia. HTML is essential 
+                    for creating static web pages and is a foundational technology for the World Wide Web.
+                </div>
+            </div>
+            
+        </div>
+
+        
+
+    <div class="Topics">
+            <div class="grid-box"><h1>HTML Sub Topics</h1> </div>
+        
+        
+            <div class="grid-box"><ion-icon name="checkmark-circle-outline" class="icon-color"></ion-icon> HTML syntax and structure</div>
+            <div class="grid-box"><ion-icon name="checkmark-circle-outline" class="icon-color"></ion-icon> HTML elements and attributes</div>
+            <div class="grid-box"><ion-icon name="checkmark-circle-outline" class="icon-color"></ion-icon> HTML forms and input elements</div>
+            <div class="grid-box"><ion-icon name="checkmark-circle-outline" class="icon-color"></ion-icon> HTML tables and lists</div>
+            <div class="grid-box"><ion-icon name="checkmark-circle-outline" class="icon-color"></ion-icon> HTML multimedia elements (audio, video, images)</div>
+            <div class="grid-box"><ion-icon name="checkmark-circle-outline" class="icon-color"></ion-icon> HTML accessibility and semantic markup</div>
+
+        
+    </div>
+
+    
+
+</main>
+<div class="Favourites" id="Favourites">
+    <h4 class="Fav-header">My Favourite Topics</h4>
+    <div class="grid-cards-fav">
+        <div class="card-fav">
+            <img class="card-fav-image" src="./assets/react.webp">
+            <div class="card-fav-description">
+                <h4 class="card-fav-description">React</h4>
+                <ion-icon class="star fav" name="star"></ion-icon>
+                <ion-icon class="star" name="star"></ion-icon>
+                <ion-icon class="star" name="star"></ion-icon>
+                <ion-icon class ="star" name="star-half-outline"></ion-icon>
+                <ion-icon class="star" name="star-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="card-fav">
+            <img class="card-fav-image" src="./assets/cloud.jpeg">
+            <div class="card-fav-description">
+                <h4 class="card-fav-description">Cloud Computing</h4>
+                <ion-icon class="star fav" name="star"></ion-icon>
+                <ion-icon class="star" name="star"></ion-icon>
+                <ion-icon class="star" name="star"></ion-icon>
+                <ion-icon class ="star" name="star"></ion-icon>
+                <ion-icon class="star" name="star-half-outline"></ion-icon>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+        <footer class="footer-details">Developed with <ion-icon style="color: red;" name="heart"></ion-icon> © 2023</footer>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="darkmode.js"></script>
+        <script src="favourites.js"></script>
+    </body>
+
+</html>
