@@ -11,11 +11,6 @@ fetch('./topics.json')
 
 
 
-
-
-
-
-
 if(favorites != null){
     favorites = JSON.parse(localStorage.getItem('favorites'))
     console.log(favorites)
@@ -29,9 +24,17 @@ if(favorites != null){
         cardFav.classList.add('card-fav')
         gridCards.appendChild(cardFav)
 
+        let cancel = document.createElement('div')
+        cancel.classList.add('cancel')
+        cancel.setAttribute('id',favorites[i])
+        cancel.innerHTML = 'X'
+        cancel.setAttribute('onclick','cancelFav(id)')
+        
+        cardFav.appendChild(cancel)
+
         let cardFavImg = document.createElement('img')
         cardFavImg.classList.add('card-fav-image')
-        cardFavImg.src=  './assets/' + json[favorites[i]].image
+        cardFavImg.src=  './assets/' + json[favorites[i]-1].image
         cardFav.appendChild(cardFavImg)
 
         let cardFavDesc = document.createElement('div')
@@ -39,11 +42,12 @@ if(favorites != null){
         cardFav.appendChild(cardFavDesc)
 
         let cardFavDescH4 = document.createElement('h4')
-        cardFavDescH4.innerHTML = json[favorites[i]].topic
+        cardFavDescH4.innerHTML = json[favorites[i]-1].topic
         cardFavDesc.appendChild(cardFavDescH4)
     }
 
 }
+
 
 })
 
@@ -72,3 +76,21 @@ favouriteToggle.addEventListener("click",()=>{
     }
 
 });
+
+function cancelFav(cancelledId){
+    favorites = JSON.parse(localStorage.getItem('favorites'))
+    console.log('id = '+cancelledId)
+    console.log('before deletion = ' + favorites)
+    const index = favorites.indexOf(cancelledId);
+    console.log(index)
+        if (index > -1) { // only splice array when item is found
+        favorites.splice(index, 1); // 2nd parameter means remove one item only
+        console.log('after deletion = ' + favorites)
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+       location.reload();
+       favouriteToggle.click()
+       
+
+}
+console.log(JSON.parse(localStorage.getItem('favorites')))
+}

@@ -1,7 +1,7 @@
 let id = localStorage.getItem("id")
 // get myFavorites from local storage or empty array
 let myFav = JSON.parse(localStorage.getItem("favorites")) || [];
-console.log(id);
+console.log('we are in id = ' + id);
 fetch('topics.json')
 .then(response => {
     return response.json()
@@ -50,7 +50,7 @@ fetch('topics.json')
 
     let btnInterested = document.createElement('button')
     btnInterested.classList.add('details-btn-favorites')
-    btnInterested.setAttribute('id',json[id-1].id)
+    btnInterested.setAttribute('id',id)
     btnInterested.setAttribute('onclick','AddToFavourite(id)');
     btnInterested.innerHTML = 'Add to Favourites'
     interested.appendChild(btnInterested)
@@ -143,18 +143,25 @@ fetch('topics.json')
 })
 
 function AddToFavourite(id){
-    if(document.querySelector('.heart-fav-details').name =="heart-outline"){
+    
     document.querySelector('.heart-fav-details').name="heart";
+    console.log('we are adding id='+id)
+    if(myFav.indexOf(id)<0){
     myFav.push(id)
+    console.log(myFav)
     localStorage.setItem('favorites', JSON.stringify(myFav));
+    
     }
+    /*
     else{
         document.querySelector('.heart-fav-details').name="heart-outline";
         const index = myFav.indexOf(id);
+        console.log('We are in index' + index)
         if (index > -1) { // only splice array when item is found
         myFav.splice(index, 1); // 2nd parameter means remove one item only
         localStorage.setItem('favorites', JSON.stringify(myFav));
         }
-    }
+        */
+    
     
 }

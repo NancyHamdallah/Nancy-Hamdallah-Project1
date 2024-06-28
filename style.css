@@ -416,3 +416,11 @@ h4,h3{
 }
 
 
+.cancel{
+    position : absolute;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 10%;
+    margin-left: 0.3%;
+}
