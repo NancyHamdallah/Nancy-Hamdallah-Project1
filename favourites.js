@@ -20,7 +20,7 @@ renderFavorites(favorites,json)
 
 
 const enableFav = () =>{
-    
+    deleteAllFav()
     apiCall()
     
     document.getElementById("Favourites").style.visibility="visible";
