@@ -3,55 +3,26 @@ const favouriteToggle = document.querySelector("#favourite-toggle");
 const addToFav = document.querySelector("#details-btn-favorites")
 let fav = 0;
 
-fetch('./topics.json')
+async function apiCall() {
+    
+    fetch('./topics.json')
 .then(response => {
     return response.json()
 })
 .then(json =>{
 
+renderFavorites(favorites,json)
 
-
-if(favorites != null){
-    favorites = JSON.parse(localStorage.getItem('favorites'))
-    console.log(favorites)
-    for(let i=0;i<favorites.length;i++){
-
-
-        // build the html elements of Favourite popup dynamically
-        let gridCards = document.querySelector('.grid-cards-fav')
-        
-        let cardFav = document.createElement('div')
-        cardFav.classList.add('card-fav')
-        gridCards.appendChild(cardFav)
-
-        let cancel = document.createElement('div')
-        cancel.classList.add('cancel')
-        cancel.setAttribute('id',favorites[i])
-        cancel.innerHTML = 'X'
-        cancel.setAttribute('onclick','cancelFav(id)')
-        
-        cardFav.appendChild(cancel)
-
-        let cardFavImg = document.createElement('img')
-        cardFavImg.classList.add('card-fav-image')
-        cardFavImg.src=  './assets/' + json[favorites[i]-1].image
-        cardFav.appendChild(cardFavImg)
-
-        let cardFavDesc = document.createElement('div')
-        cardFavDesc.classList.add('card-fav-description')
-        cardFav.appendChild(cardFavDesc)
-
-        let cardFavDescH4 = document.createElement('h4')
-        cardFavDescH4.innerHTML = json[favorites[i]-1].topic
-        cardFavDesc.appendChild(cardFavDescH4)
-    }
-
+})
 }
 
 
-})
+
 
 const enableFav = () =>{
+    
+    apiCall()
+    
     document.getElementById("Favourites").style.visibility="visible";
     document.getElementById("heart-icon").name="heart";
     
@@ -65,6 +36,8 @@ const disableFav = () =>{
 
 
 favouriteToggle.addEventListener("click",()=>{
+
+    
 
     if(fav==0){
         enableFav();
@@ -92,5 +65,57 @@ function cancelFav(cancelledId){
        
 
 }
-console.log(JSON.parse(localStorage.getItem('favorites')))
+
+}
+
+function renderFavorites(favorites,json){
+    if(favorites != null){
+        favorites = JSON.parse(localStorage.getItem('favorites'))
+        console.log(favorites)
+        for(let i=0;i<favorites.length;i++){
+    
+    
+            // build the html elements of Favourite popup dynamically
+            let gridCards = document.querySelector('.grid-cards-fav')
+            
+            let cardFav = document.createElement('div')
+            cardFav.classList.add('card-fav')
+            gridCards.appendChild(cardFav)
+    
+            let cancel = document.createElement('div')
+            cancel.classList.add('cancel')
+            cancel.setAttribute('id',favorites[i])
+            cancel.innerHTML = 'X'
+            cancel.setAttribute('onclick','cancelFav(id)')
+            
+            cardFav.appendChild(cancel)
+    
+            let cardFavImg = document.createElement('img')
+            cardFavImg.classList.add('card-fav-image')
+            cardFavImg.src=  './assets/' + json[favorites[i]-1].image
+            cardFav.appendChild(cardFavImg)
+    
+            let cardFavDesc = document.createElement('div')
+            cardFavDesc.classList.add('card-fav-description')
+            cardFav.appendChild(cardFavDesc)
+    
+            let cardFavDescH4 = document.createElement('h4')
+            cardFavDescH4.innerHTML = json[favorites[i]-1].topic
+            cardFavDesc.appendChild(cardFavDescH4)
+        }
+    
+    }
+}
+
+function deleteAllFav(){
+    let gridCards = document.querySelector('.grid-cards-fav')
+    let child = gridCards.lastElementChild;  
+            
+                    
+                    
+            while (child) { 
+            gridCards.removeChild(child); 
+            child = gridCards.lastElementChild; 
+            }
+    
 }

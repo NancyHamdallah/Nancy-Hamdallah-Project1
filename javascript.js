@@ -178,4 +178,6 @@ function detailsCard(id){
 }
 
 
+
+
     

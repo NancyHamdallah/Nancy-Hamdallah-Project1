@@ -225,6 +225,7 @@ h4,h3{
 .details-btn-favorites{
     cursor: pointer;
     width:90%;
+    min-width : 100px;
     height: 3rem;
     background-color: var(--brand-secondary);
     font-size:larger;
@@ -301,5 +302,6 @@ h4,h3{
     border-radius: 10%;
     margin-left: 0.3%;
 }
+
 
 

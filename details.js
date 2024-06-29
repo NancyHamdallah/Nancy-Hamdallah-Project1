@@ -13,6 +13,7 @@ fetch('topics.json')
     topicCard.classList.add('topic-card')
     main.appendChild(topicCard)
     let newDiv = document.createElement('div')
+    newDiv.classList.add('interested-card')
     topicCard.appendChild(newDiv)
     
     let detailsImg = document.createElement('img')
@@ -150,7 +151,8 @@ function AddToFavourite(id){
     myFav.push(id)
     console.log(myFav)
     localStorage.setItem('favorites', JSON.stringify(myFav));
-    
+    deleteAllFav()
+    apiCall()
     }
     /*
     else{
